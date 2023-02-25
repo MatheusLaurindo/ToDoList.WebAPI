@@ -67,5 +67,12 @@ namespace TodoList.WebApi.Controllers
             await _activityRepository.SetFinished(id);
             return Ok();
         }
+
+        [HttpDelete("DeleteHistory")]
+        public async Task<ActionResult<Activity>> DeleteHistory()
+        {
+            await _activityRepository.DeleteHistory();
+            return Ok();
+        }
     }
 }

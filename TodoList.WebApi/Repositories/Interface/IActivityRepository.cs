@@ -11,5 +11,6 @@ namespace TodoList.WebApi.Repositories.Interface
         Task DeleteTask(int id);
         Task SetFinished(int id);
         Task<IEnumerable<Activity>> GetFinishedTasks();
+        Task DeleteHistory();
     }
 }

@@ -61,5 +61,12 @@ namespace TodoList.WebApi.Repositories
             _context.Entry(activity).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
+
+        public async Task DeleteHistory()
+        {
+            var activities = await _context.Activities.Where(x => x.IsFinished).ToListAsync();
+            _context.RemoveRange(activities);
+            _context.SaveChanges();
+        }
     }
 }
